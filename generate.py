@@ -3,7 +3,7 @@ import random
 import string
 import datetime
 import csv
-
+#
 fakeSweden = Faker(['sv_SE'])
 fakeNorway = Faker(['no_NO'])
 fakeFinland = Faker(['fi_FI'])
