@@ -43,7 +43,7 @@ def test_json_rows(json_path, min_expected_rows):
 if __name__ == "__main__":
     # Paths
     csv_file_path = 'profiles1.csv'
-    json_file_path = 'profiles1.json'
+    json_file_path = 'data.json'
 
     # Convert CSV to JSON
     csv_to_json(csv_file_path, json_file_path)
