@@ -31,8 +31,8 @@ def csvConvert(csv_Path, json_Path):
 
 # Decide the two file paths according to your 
 # computer system
-csvFilePath = r'profiles1.csv'
-jsonFilePath = r'data.json'
+csvFilePath = 'profiles1.csv'
+jsonFilePath = 'data.json'
 
 # Call the make_json function
 csvConvert(csvFilePath, jsonFilePath)
