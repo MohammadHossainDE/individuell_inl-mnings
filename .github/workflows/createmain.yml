@@ -22,7 +22,16 @@ jobs:
         run: echo Hello, world!      
       # lägg till create csv file (glöm inte pip install)
       # lägg till Create JSON file
-      # Köra ehnetstester      
+      # Köra ehnetstester 
+      name: Install faker package
+      run: |
+        pip install faker
+
+      name: Run generate.py
+      run: python generate.py
+
+      name: Run csvtojson.py
+      run: python csvtojson.py
       - name: Copy to dist
         run: |
           mkdir dist
