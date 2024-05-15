@@ -15,12 +15,12 @@ def csvConvert(csv_Path, json_Path):
 		
 		# Convert each row into a dictionary 
 		# and add it to data
-		for rows in csvData:
+		#for rows in csvData:
 			
 			# Assuming a column named 'Givenname' to
 			# be the primary key
-			key = rows['Givenname']
-			jsondata[key] = rows
+			#key = rows['']
+			#jsondata[key] = rows
 
 	# Open a json writer, and use the json.dumps() 
 	# function to dump data
@@ -31,8 +31,8 @@ def csvConvert(csv_Path, json_Path):
 
 # Decide the two file paths according to your 
 # computer system
-csvFilePath = r'profiles1.csv'
-jsonFilePath = r'data.json'
+csvFilePath = 'profiles1.csv'
+jsonFilePath = 'data.json'
 
 # Call the make_json function
 csvConvert(csvFilePath, jsonFilePath)
