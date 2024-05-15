@@ -15,12 +15,12 @@ def csvConvert(csv_Path, json_Path):
 		
 		# Convert each row into a dictionary 
 		# and add it to data
-		#for rows in csvData:
+		for rows in csvData:
 			
 			# Assuming a column named 'Givenname' to
 			# be the primary key
-			#key = rows['']
-			#jsondata[key] = rows
+			key = rows['Givenname']
+			jsondata[key] = rows
 
 	# Open a json writer, and use the json.dumps() 
 	# function to dump data
