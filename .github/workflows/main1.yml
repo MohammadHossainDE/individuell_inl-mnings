@@ -1,0 +1,53 @@
+name: CICD
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+  id-token: write
+  pages: write
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:    
+      - uses: actions/checkout@v3
+      
+      - name: Run a one-line script
+        run: echo Hello, world!
+        
+      - name: Install dependencies
+        run: pip install Faker
+        
+      - name: Create CSV file
+        run: python generate.py
+        
+      - name: Convert CSV to JSON file
+        run: python csvtojson.py
+
+      - name: Run unit tests
+        run: python Unittest.py
+        
+      - name: Copy to dist
+        run: |
+          mkdir dist
+          cp index.html dist/index.html
+          cp data.json dist/data.json
+          cp script.js dist/script.js
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'dist'
+          
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
