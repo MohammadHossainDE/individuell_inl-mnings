@@ -21,12 +21,19 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
+        
       - name: pip
         run: pip install Faker
+        
       - name: Create CSV file
         run: python generate.py
+        
       - name: Convert CSV to JSON file
         run: python csvtojson.py
+
+      - name: Run unit tests
+        run: python unittest.py
+        
       # KÃ¶ra enhetstester      
       - name: Copy to dist
         run: |
