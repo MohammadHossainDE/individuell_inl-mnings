@@ -32,7 +32,7 @@ jobs:
         run: python csvtojson.py
 
       - name: Run unit tests
-        run: python unittest.py
+        run: python Unittest.py
         
       # KÃ¶ra enhetstester      
       - name: Copy to dist
